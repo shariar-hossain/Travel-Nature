@@ -17,29 +17,32 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 
 	$re_pass = validate($_POST['re_password']);
 	$name = validate($_POST['name']);
+	$number = Validate($_POST['unumber']);
 
-	$user_data = 'uname='. $uname. '&name='. $name;
+	//uname=dipto123&name=dipto
 
 
 	if (empty($uname)) {
-		header("Location: ../view/signup.php?error=User Name is required&$user_data");
+		header("Location: ../view/signup.php?error=User Name is required");
 	    exit();
 	}else if(empty($pass)){
-        header("Location: ../view/signup.php?error=Password is required&$user_data");
+        header("Location: ../view/signup.php?error=Password is required");
 	    exit();
 	}
 	else if(empty($re_pass)){
-        header("Location: ../view/signup.php?error=Re Password is required&$user_data");
+        header("Location: ../view/signup.php?error=Re Password is required");
+	    exit();
+	}else if(empty($number)){
+		header("Location: ../view/signup.php?error=Phone number is required");
 	    exit();
 	}
-
 	else if(empty($name)){
-        header("Location: ../view/signup.php?error=Name is required&$user_data");
+        header("Location: ../view/signup.php?error=Name is required");
 	    exit();
 	}
 
 	else if($pass !== $re_pass){
-        header("Location: ../view/signup.php?error=The confirmation password  does not match&$user_data");
+        header("Location: ../view/signup.php?error=The confirmation password  does not match");
 	    exit();
 	}
 
@@ -52,16 +55,18 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
-			header("Location: ../view/signup.php?error=The username is taken try another&$user_data");
+			header("Location: ../view/signup.php?error=The username is taken try another");
 	        exit();
 		}else {
-           $sql2 = "INSERT INTO users(user_name, password, name) VALUES('$uname', '$pass', '$name')";
+           $sql2 = "INSERT INTO users(user_name, password, name, number) VALUES('$uname', '$pass', '$name', $number)";
            $result2 = mysqli_query($conn, $sql2);
            if ($result2) {
-           	 header("Location: ../view/signup.php?success=Your account has been created successfully");
+			$_SESSION['user_name'] = $uname;
+			$_SESSION['name'] = $name;
+           	 header("Location: ../view/welcome.php");
 	         exit();
            }else {
-	           	header("Location: ../view/signup.php?error=unknown error occurred&$user_data");
+	           	header("Location: ../view/signup.php?error=unknown error occurred");
 		        exit();
            }
 		}
@@ -71,3 +76,4 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 	header("Location: ../view/signup.php");
 	exit();
 }
+?>

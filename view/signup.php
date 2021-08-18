@@ -39,6 +39,18 @@
                       placeholder="User Name"><br>
           <?php }?>
 
+          <label>User phone Number</label>
+          <?php if (isset($_GET['unumber'])) { ?>
+               <input type="number" 
+                      name="unumber" 
+                      placeholder="User Phone Number"
+                      value="<?php echo $_GET['unumber']; ?>"><br>
+          <?php }else{ ?>
+               <input type="number" 
+                      name="unumber" 
+                      placeholder="User Phone Number"><br>
+          <?php }?>
+
 
           <label>Password</label>
           <input type="password" 
