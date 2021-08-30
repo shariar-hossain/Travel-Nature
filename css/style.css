@@ -1,70 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&display=swap');
+
 body 
 {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'David Libre';
 }
 
 #home{
   height: 100vh;
-  background-image: url(../images/p1.jpg);
+
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   animation: changeHomebg 5s linear infinite;
 }
 
+#gradient{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
 @keyframes changeHomebg{
 
   0%{
   background-image: url(../images/p1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  
+  
   }
+
 24%{
     background-image: url(../images/p1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  
 }
+
 25%{
     background-image: url(../images/p2.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  
 }
+
 49%{
     background-image: url(../images/p2.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}50%{
-    background-image: url(../images/p3.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+ 
 }
+
+50%{
+    background-image: url(../images/p3.jpg);
+ 
+}
+
 74%{
-    background-image: url(../images/p3.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    background-image:  url(../images/p3.jpg);
+  
 }
+
 75%{
-    background-image: url(../images/p4.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    background-image:  url(../images/p4.jpg);
+  
 }
+
 100%{
-    background-image: url(../images/p4.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    background-image:  url(../images/p4.jpg);
+  
 }
 }
 
+.button-style a {
+	text-decoration: none;
+	background: #555;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+}
+
+.button-style a:hover{
+	background: white;
+	color: black;
+	box-shadow: 0 0 10px white;
+}
 
 /*admin code*/
 
@@ -140,8 +164,7 @@ section .link{
 
 .subHead{
  height:10vh;
-  width: 100vh
-background: 1px red;
+width: 100vh;
 color: white;
 display: flex;
 align-items: center;
@@ -152,8 +175,7 @@ padding: 90px 90px;
 
 .subhead{
  height:1vh;
-  width: 100vh
-background: 1px red;
+width: 100vh;
 color: white;
 display: flex;
 align-items: center;
@@ -171,91 +193,7 @@ text-decoration: none;
 
 
 
-/* login...................*/
 
-#login{
-  height: 100vh;
-  background-image: url(../images/p1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-
-.center
-{
-  width: 382px;  
-  color: yellowgreen;
-          
-  margin-left:150px;
-  margin-top: 150px; 
-  background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7));    
-  padding: 80px;   
-  border-radius: 30px ;
-  border: 5px solid yellowgreen;
-}
-
-#login input{
-  background: yellowgreen;
-  font-weight: bold;
-}
-
-.center h5 a{
-  color: yellowgreen;
-  text-decoration: none;
-}
-
-/*login ends...........................................*/
-
-
-/*sign up starts...........................................*/
-
-
-
-#registration{
-  height: 100vh;
-  background-image: url(../images/p1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-
-#registration .reg-center
-{
-  width: 1000px;
-  text-align: center;  
-  
-  padding: 20px;       
-  margin-left: 0;
-  margin-top: 100px; 
-  background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7));    
-  border-radius: 30px ;
-  border: 5px solid yellowgreen;
-  color: yellowgreen;
-}
-
-#registration .reg-center h5{
-  color: yellowgreen;
-  text-decoration: none;
-}
-
-.gen{
-  color: yellowgreen;
-}
-
-.update
-{
-  width: 382px;  
-  text-align: center;        
-  margin-left:35%;
-  margin-top: 5%; 
-  align-items:center;     
-  padding: 80px;  
-  background: #f2f2f2;  
-  border-radius: 30px ;
-  border: 5px solid gray;
-}
 
 .welcome
 {
@@ -270,31 +208,3 @@ text-decoration: none;
   border-radius: 30px ;
   border: 5px solid gray;
 }
-
-
-
-.footer-fixed 
-{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: yellowgreen;
-  color: white;
-  text-align: center;
-  margin-top: 10px;
-  padding-top: 10px;
-}
-.footer 
-{
-  padding: 10px;
-  background-color: yellowgreen;
-  color: white;
-  text-align: center;
- 
-}
-
-.bg-clr{
-  background-image: url(../images/bgcube.jpg);
-}
-/* styles.css */

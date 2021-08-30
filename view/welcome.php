@@ -14,7 +14,8 @@ if (isset($_SESSION['name'])) {
      <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
      <nav class="home-nav">
      	<a href="change-password.php">Change Password</a>
-          <a href="gallery.php">Continue</a>
+          <a href="gallery.php">Destination</a>
+          <a href="user_booked_packages.php">Bookings</a>
         <a href="../control/logout.php">Logout</a>
      </nav>
      

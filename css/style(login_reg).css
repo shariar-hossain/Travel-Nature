@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&display=swap');
+
 body {
 	background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("../images/admin.jpg");
 	display: flex;
@@ -8,14 +10,13 @@ body {
 }
 
 *{
-	font-family: sans-serif;
+	font-family: 'David Libre';
 	box-sizing: border-box;
 }
 
 form {
 	width: 600px;
 	border: 2px solid #ccc;
-	/*padding: 30px;*/
 	background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7));
 	border-radius: 15px;
 }
@@ -24,13 +25,12 @@ form {
   width: 600px;
   text-align: center;         
   margin-left: 0;
-      
   border-radius: 30px ;
   border: 5px solid yellowgreen;
   color: yellowgreen;
 }
 
-h2 {
+h1 {
 	text-align: center;
 	margin-bottom: 40px;
 	color: whitesmoke;
@@ -46,12 +46,13 @@ input {
 }
 label {
 	color: #888;
-	font-size: 18px;
+	font-size: 22px;
 	padding: 10px;
 }
 
 button {
 	float: right;
+	font-size: 16px;
 	background: #555;
 	padding: 10px 15px;
 	color: #fff;
@@ -90,7 +91,7 @@ h1 {
 }
 
 .ca {
-	font-size: 14px;
+	font-size: 20px;
 	display: inline-block;
 	padding: 10px;
 	text-decoration: none;
@@ -101,8 +102,17 @@ h1 {
 } 
 
 .home-nav a {
-	padding: 10px;
-	color: #f7bd65;
-	text-transform: uppercase;
 	text-decoration: none;
+	background: #555;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+}
+
+.home-nav a:hover{
+	background: white;
+	color: black;
+	box-shadow: 0 0 10px white;
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
      <form action="../control/signup-check.php" method="post">
-          <h2>SIGN UP</h2>
+          <h1>SIGN UP</h1>
           <?php if (isset($_GET['error'])) { ?>
                <p class="error"><?php echo $_GET['error']; ?></p>
           <?php } ?>

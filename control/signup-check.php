@@ -61,9 +61,8 @@ if (isset($_POST['uname']) && isset($_POST['password'])
            $sql2 = "INSERT INTO users(user_name, password, name, number) VALUES('$uname', '$pass', '$name', $number)";
            $result2 = mysqli_query($conn, $sql2);
            if ($result2) {
-			$_SESSION['user_name'] = $uname;
-			$_SESSION['name'] = $name;
-           	 header("Location: ../view/welcome.php");
+			
+           	 header("Location: ../view/loginform.php");
 	         exit();
            }else {
 	           	header("Location: ../view/signup.php?error=unknown error occurred");
