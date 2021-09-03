@@ -19,6 +19,23 @@ html {
   background-size: cover;*/
 }
 
+.ba{
+	text-decoration: none;
+	background: #555;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+	float: right;
+  font-size: 20px;
+}
+.ba:hover{
+  background: white;
+  color: black;
+  box-shadow: 0 0 10px white;
+}
+
 a {
   text-decoration: none;
   color: rgb(3, 155, 155);

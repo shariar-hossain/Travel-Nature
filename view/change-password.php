@@ -3,15 +3,19 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
- ?>
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Change Password</title>
 	<link rel="stylesheet" type="text/css" href="../css/style(login_reg).css">
 </head>
+
 <body>
+
     <form action="../control/change-p.php" method="post">
+	
      	<h2>Change Password</h2>
      	<?php if (isset($_GET['error'])) { ?>
      		<p class="error"><?php echo $_GET['error']; ?></p>
@@ -40,8 +44,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
      	       <br>
 
      	<button type="submit">CHANGE</button>
-          <a href="welcome.php" class="ca">Back</a>
+        <a href="welcome.php" class="ba">Back</a>
+
      </form>
+	 
 </body>
 </html>
 

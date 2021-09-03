@@ -3,15 +3,19 @@ session_start();
 
 if (isset($_SESSION['name'])) {
 
- ?>
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Welcome</title>
 	<link rel="stylesheet" type="text/css" href="../css/style(login_reg).css">
 </head>
+
 <body>
-     <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
+
+     <h1>Hello, <?php echo $_SESSION['name']; ?><br><br>Cordially Welcoming you to SEIZE YOUR MOMENTS with us🌺</h1><br>
+     
      <nav class="home-nav">
      	<a href="change-password.php">Change Password</a>
           <a href="gallery.php">Destination</a>
@@ -27,4 +31,4 @@ if (isset($_SESSION['name'])) {
      header("Location: loginform.php");
      exit();
 }
- ?>
+?>

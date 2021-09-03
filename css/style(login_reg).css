@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&display=swap');
 
+*{
+	font-family: 'David Libre';
+	box-sizing: border-box;
+}
+
 body {
-	background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("../images/admin.jpg");
+	background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("../images/bg.jpg");
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	flex-direction: column;
-}
-
-*{
-	font-family: 'David Libre';
-	box-sizing: border-box;
+	background-size: cover;
 }
 
 form {
@@ -21,19 +22,17 @@ form {
 	border-radius: 15px;
 }
 
-#sign-up form .center{
-  width: 600px;
-  text-align: center;         
-  margin-left: 0;
-  border-radius: 30px ;
-  border: 5px solid yellowgreen;
-  color: yellowgreen;
-}
-
 h1 {
 	text-align: center;
 	margin-bottom: 40px;
 	color: whitesmoke;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	color: whitesmoke;
+	font-size: 30px;
 }
 
 input {
@@ -44,6 +43,7 @@ input {
 	margin: 10px auto;
 	border-radius: 5px;
 }
+
 label {
 	color: #888;
 	font-size: 22px;
@@ -62,9 +62,9 @@ button {
 }
 
 button:hover{
-background: white;
-color: black;
-box-shadow: 0 0 10px white;
+	background: white;
+	color: black;
+	box-shadow: 0 0 10px white;
 }
 
 .error {
@@ -90,6 +90,23 @@ h1 {
 	color: #fff;
 }
 
+.ba{
+	text-decoration: none;
+	background: #555;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+	float: right;
+	margin-bottom: 5px;
+}
+.ba:hover{
+	background: white;
+	color: black;
+	box-shadow: 0 0 10px white;
+}
+
 .ca {
 	font-size: 20px;
 	display: inline-block;
@@ -97,6 +114,7 @@ h1 {
 	text-decoration: none;
 	color: whitesmoke;
 }
+
 .ca:hover {
 	text-decoration: underline;
 } 

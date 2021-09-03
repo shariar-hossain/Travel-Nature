@@ -49,16 +49,18 @@
           </p>
           <p>
             <a href="#" target="_blank"
-              ><i class="fa fa-whatsapp" aria-hidden="true"> Whatsapp</i></a
-            >
+              ><i class="fa fa-whatsapp" aria-hidden="true"> Whatsapp</i></a>
           </p>
           <p>
             <a href="#" target="_blank"
-              ><i class="fab fa-twitter"> Twitter</i></a
-            >
+              ><i class="fab fa-twitter"> Twitter</i></a>
           </p>
         </div>
+        
         <hr />
+        <div class="ba">
+        <a href="home.php">Back</a>
+        </div>
       </div>
 
 </body>

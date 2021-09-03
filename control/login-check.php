@@ -51,3 +51,4 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	header("Location: ../view/loginform.php");
 	exit();
 }
+?>

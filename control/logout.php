@@ -4,5 +4,5 @@ session_start();
 session_unset();
 session_destroy();
 
-header("Location: ../view/loginform.php");
+header("Location: ../view/home.php");
 ?>

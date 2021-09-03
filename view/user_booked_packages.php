@@ -12,45 +12,68 @@ include "../control/db_conn.php";
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>Booked Packages</title>
-    
+    <style>
+      *{
+        color: white;
+      }
+      body{
+        background-color: rgb(41, 39, 39);
+        
+      }
+      a{
+          text-decoration: none;
+          background: #555;
+          padding: 10px 15px;
+          color: #fff;
+          border-radius: 5px;
+          margin-right: 10px;
+          border: none;
+
+      }
+      a:hover{
+        background: white;
+        color: black;
+        box-shadow: 0 0 10px white;
+      }
+    </style>
 
 
 </head>
 <body>
 
+  <nav class="d-flex me-5 mt-3 flex-row-reverse">
+        <a href="welcome.php">Back</a>
+  </nav>
+  <section class="container py-4 table-responsive">
 
-<!-- ---------------------- table----------------------------------- -->
-
-<section class="container py-4 table-responsive">
-
-<table class="table table-striped text-center" id="myTable">
-  <thead class="table-dark">
-      <tr>
-        <th scope="col">Booking Id</th>
-        <th scope="col">User Id</th>
-        <th scope="col">Booking Date</th>
-        <th scope="col">Location</th>
-        <th scope="col">Schedule</th>
-        <th scope="col">Status</th>
-        <th scope="col"> </th>
-      </tr>
-  </thead>
-  <tbody>
-    <?php
-     $i=0;
-        $session_id = $_SESSION['id'];
-        $sql = "Select 	id , user_id, dateTime, package, schedule, status from booking where user_id = '$session_id' ORDER BY schedule";
-        $result = mysqli_query($conn, $sql);
-        if(mysqli_num_rows($result) > 0){
-            while($row = $result->fetch_assoc()){
-                echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["user_id"]} </td> <td> {$row["dateTime"]} </td> <td class='row-data'> {$row["package"]} </td> <td> {$row["schedule"]}   </td><td> {$row["status"]}   </td> <td><button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleBooking()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td> </tr>";
-              $i++;
-            }
-        }
-    
-    ?>
-  </tbody>
-</table>
+  <table class="table table-striped text-center" id="myTable">
+    <thead class="table-dark">
+        <tr>
+          <th scope="col">Booking Id</th>
+          <th scope="col">User Id</th>
+          <th scope="col">Booking Date</th>
+          <th scope="col">Location</th>
+          <th scope="col">Schedule</th>
+          <th scope="col">Status</th>
+          <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+      <?php
+      $i=0;
+          $session_id = $_SESSION['id'];
+          $sql = "Select 	id , user_id, dateTime, package, schedule, status from booking where user_id = '$session_id' ORDER BY schedule";
+          $result = mysqli_query($conn, $sql);
+          if(mysqli_num_rows($result) > 0){
+              while($row = $result->fetch_assoc()){
+                  echo "<tr id='{$i}'> <td class='row-data'> {$row["id"]} </td> <td class='row-data'> {$row["user_id"]} </td> <td> {$row["dateTime"]} </td> <td class='row-data'> {$row["package"]} </td> <td> {$row["schedule"]}   </td><td> {$row["status"]}   </td> <td><button type='button' class='btn btn-danger rounded-1 cancel-btn' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='cancleBooking()' ><i class='far fa-times-circle me-1'></i>Cancel</button>  </td> </tr>";
+                $i++;
+              }
+          }
+      
+      ?>
+    </tbody>
+  </table>
 
 <!-- ------------------------- modal------------------------------------ -->
 <form method="POST" action="../control/booking_cancel_controller.php" class="text-light">
@@ -76,15 +99,30 @@ include "../control/db_conn.php";
 
 
 </section>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-delay="2000">
+            <div class="toast-body bg-success text-light">
+                Schedule Request Sent Successfully.
+            </div>
+        </div>
+</div>
+    <?php
+        if(isset($_GET['success'])){
+            echo '<script> var success = 1; </script>';
+        }
+    ?>
 
-
-
- <!-- ------------------------ strip ------------------------------- -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
 
 
  <script>
+       if(success==1){
+        var toastLiveExample = document.getElementById('liveToast');
+        var toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+        warning = 0;
+    }
 
 function cancleBooking(){
   var rowId =event.target.parentNode.parentNode.id;
@@ -99,32 +137,3 @@ function cancleBooking(){
 </script>
 </body>
 </html>
-
-
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-            <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="#">
-                              <img src="" alt="" width="40" height="40" class="d-inline-block align-text-top me-2" /> <span>Travel Nature</span>
-                          </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                      <li class="nav-item mx-2 fs-5">
-                        <a class="nav-link active  navbar-shortcutlink current-page" aria-current="page" href="welcome.php">Home</a>
-                      </li>
-                      <li class="nav-item mx-2 fs-5">
-                        <a class="nav-link active navbar-shortcutlink" aria-current="page" href="#">Schedule</a>
-                      </li>
-                      <li class="nav-item mx-2 fs-5 ">
-                        <a class="nav-link active navbar-shortcutlink" aria-current="page" href="gallery.php">Booking</a>
-                      </li>
-                      <li class="nav-item mx-2 fs-5 ">
-                        <a class="nav-link active navbar-shortcutlink" aria-current="page" href="#">Logout</a>
-                      </li>           
-                  </ul>
-            </div>
-      </div>
-</nav> -->

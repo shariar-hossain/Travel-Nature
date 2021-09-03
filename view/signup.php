@@ -4,8 +4,11 @@
      <title>SIGN UP</title>
      <link rel="stylesheet" type="text/css" href="../css/style(login_reg).css">
 </head>
+
 <body>
+
      <form action="../control/signup-check.php" method="post">
+
           <h1>SIGN UP</h1>
           <?php if (isset($_GET['error'])) { ?>
                <p class="error"><?php echo $_GET['error']; ?></p>
@@ -64,6 +67,8 @@
 
           <button type="submit">Sign Up</button>
           <a href="loginform.php" class="ca">Already have an account?</a>
+
      </form>
+     
 </body>
 </html>

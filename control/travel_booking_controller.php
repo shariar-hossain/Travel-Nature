@@ -11,21 +11,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql = "INSERT INTO `booking`(`user_id`, `dateTime`, `package`, `schedule`, `status`) VALUES ({$_SESSION['id']},'$date','$package','$schedule','pending');";
         if ($conn->query($sql) === TRUE) {
             
-            header("Location: ../view/saintmartin.php");
+            header("Location: ../view/user_booked_packages.php?success=1");
             exit();
         } else {
-            header("Location: ../view/saintmartin.php?error=something went wrong");
+            header("Location: ../view/gallery.php?error=something went wrong");
             exit();
             
         }
 
     }else{
-        header("Location: ../view/saintmartin.php?error=Date required");
+        header("Location: ../view/gallery.php?error=Date required");
         exit();
     }
 }
-
-
-
 
 ?>
