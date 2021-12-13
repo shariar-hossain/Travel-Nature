@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Contacts</title>
+  <meta charset="utf-8">
+  <title>Contacts</title>
 
-	<link rel="stylesheet" type="text/css" href="../css/style(contacts).css">
+  <link rel="stylesheet" type="text/css" href="../css/style(contacts).css">
 
-	<script src="https://kit.fontawesome.com/47239ddc85.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/47239ddc85.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-	<div id="contact" class="contact">
+  <div id="contact" class="contact">
         <h2>Get In Touch</h2>
         <p>
           <br><br>“The world is a book and those who do not travel read only one page.” ~ Saint Augustine<br>
@@ -25,8 +25,8 @@
         </p>
         <div class="container">
           <p>
-            <a href="mailto: mariam35-2795@diu.edu.bd"
-              ><i class="fas fa-envelope-open"></i> mariam35-2795@diu.edu.bd</a
+            <a href="mailto: tofayel35-2782@diu.edu.bd"
+              ><i class="fas fa-envelope-open"></i> travelnature@gmail.bd</a
             >
           </p>
           <p>

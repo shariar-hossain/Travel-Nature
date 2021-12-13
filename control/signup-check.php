@@ -19,7 +19,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 	$name = validate($_POST['name']);
 	$number = Validate($_POST['unumber']);
 
-	//uname=dipto123&name=dipto
+	
 
 
 	if (empty($uname)) {
